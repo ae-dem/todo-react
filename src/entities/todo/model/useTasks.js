@@ -74,7 +74,6 @@ const useTasks = () => {
       .then((addedTask) => {
         dispatch({ type: 'ADD', task: addedTask })
         callbackAfterAdding()
-        setNewTaskTitle('')
         setSearchQuery('')
         newTaskInputRef.current.focus()
         setAppearingTaskId(addedTask.id)
