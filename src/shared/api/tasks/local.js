@@ -27,7 +27,7 @@ const localApi = {
     await delay()
 
     return read()
-      .find(() => task.id === id) ?? null
+      .find((task) => task.id === id) ?? null
   },
 
   add: async (task) => {
@@ -38,8 +38,8 @@ const localApi = {
       id: crypto?.randomUUID() ?? Date.now().toString(),
     }
 
-    write([...read()], newTask)
-   
+    write([...read(), newTask])
+
     return newTask
   },
 
